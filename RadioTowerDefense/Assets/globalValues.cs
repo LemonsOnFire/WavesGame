@@ -4,5 +4,6 @@ using UnityEngine;
 
 public static class globalValues {
     public static Transform[] path;
+    public static bool isPaused;
 
 }

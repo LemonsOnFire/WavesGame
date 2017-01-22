@@ -9,7 +9,7 @@ public class WalkScript : MonoBehaviour {
     public int currentWayPoint = 0;
     Transform targetWayPoint;
 
-    public float speed = 100f;
+    public float speed = 4f;
 
     // Use this for initialization
     private void Awake()
@@ -24,9 +24,12 @@ public class WalkScript : MonoBehaviour {
         if (currentWayPoint < this.wayPointList.Length)
         {
             if (targetWayPoint == null)
+            { 
                 targetWayPoint = wayPointList[currentWayPoint];
+            }
             walk();
         }
+        else Destroy(this.gameObject , 0);
     }
 
     void walk()
@@ -36,12 +39,19 @@ public class WalkScript : MonoBehaviour {
 
         // move towards the target
         transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.position, speed * Time.deltaTime);
-
         if (transform.position == targetWayPoint.position)
         {
             currentWayPoint++;
-            targetWayPoint = wayPointList[currentWayPoint];
+            if (currentWayPoint >= wayPointList.Length)
+            {
+                Destroy(this.gameObject, 0);
+            } else
+            {
+                targetWayPoint = wayPointList[currentWayPoint];
+            }
+            
         }
+
     }
 }
 
