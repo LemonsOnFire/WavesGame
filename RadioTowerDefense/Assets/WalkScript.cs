@@ -9,12 +9,12 @@ public class WalkScript : MonoBehaviour {
     public int currentWayPoint = 0;
     Transform targetWayPoint;
 
-    public float speed = 4f;
+    public float speed = 100f;
 
     // Use this for initialization
-    void Start()
+    private void Awake()
     {
-
+        wayPointList = globalValues.path;
     }
 
     // Update is called once per frame
