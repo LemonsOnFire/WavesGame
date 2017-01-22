@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PathFollowerScript : MonoBehaviour {
-    public int pathToFollow;
+    int pathToFollow;
 	// Use this for initialization
 	void Start () {
 		
