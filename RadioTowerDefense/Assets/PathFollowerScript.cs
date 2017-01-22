@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ringAnimationScript : MonoBehaviour {
-
+public class PathFollowerScript : MonoBehaviour {
+    public int pathToFollow;
 	// Use this for initialization
 	void Start () {
 		
